@@ -29,9 +29,8 @@ N_TURNS = 5000
 N_PART = 20        # particles per family
 X_MAX = 0.45       # largest launch amplitude (octupole shrinks the border a bit)
 Y_RATIO = 0.5      # the "non-diagonal" family: y0 = Y_RATIO * x0
-GPU_DEVICE = None  # None -> CPU. On this machine you can set 0, 1, 2 or 3
-                   # to track on one of the GPUs (for these 40 particles it
-                   # brings nothing -- the GPU pays off in scripts 02-04)
+GPU_DEVICE = None  # None -> CPU. On some machines you can set 0, 1, 2 or 3
+                   # to track on one of the GPUs
 
 PLOT_DIR = Path('plots') if Path('plots').is_dir() else Path('../plots')
 
