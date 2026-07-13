@@ -5,12 +5,11 @@ bash Miniforge3-$(uname)-$(uname -m).sh -b -p ./miniforge -f
 source miniforge/bin/activate
 python -m pip install -r requirements.txt
 
-# optional: prebuild Xsuite's compiled kernels ahead of time (otherwise
-# they are built lazily on the first build_tracker() call, a few extra
-# seconds on script 01c's first run). Needs the xsuite meta-package, which
-# requirements.txt does NOT install by default:
-# pip install xsuite
-# xsuite-prebuild
+# prebuild Xsuite's compiled kernels (the xsuite-prebuild command comes with
+# the xsuite meta-package in requirements.txt). Without this the kernels are
+# built lazily on the first build_tracker() call -- a few extra seconds on
+# script 01c's first run.
+xsuite-prebuild
 
 # optional: GPU tracking (uncomment the cupy line in requirements.txt too).
 # cupy's pip wheel bundles its own CUDA runtime, so a system-wide

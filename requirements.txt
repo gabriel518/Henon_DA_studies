@@ -2,8 +2,8 @@ numpy
 scipy
 matplotlib
 numba
-xtrack
-xpart
+xsuite        # meta-package: bundles xtrack, xpart, xobjects (+ the
+              # xsuite-prebuild command used in install_miniforge.sh)
 nafflib
 ipykernel
 # optional, for GPU tracking (pick the build matching your CUDA version --
