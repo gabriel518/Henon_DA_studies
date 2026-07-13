@@ -26,7 +26,6 @@
 # %% Imports
 import numpy as np
 import matplotlib.pyplot as plt
-from pathlib import Path
 
 # %% PARAMETERS -- edit this cell and re-run everything below
 Q = 0.28           # tune: number of betatron oscillations per turn 
@@ -37,7 +36,6 @@ X0_SINGLE = 0.001  # launch amplitude of the single particle in step 1
 N_PART = 20        # number of initial conditions along the x axis
 X_MAX = 1.0       # largest launch amplitude
 
-PLOT_DIR = Path('plots') if Path('plots').is_dir() else Path('../plots')
 
 # %% Step 1: follow ONE particle for a few turns
 # Launch a single particle and store its position turn
@@ -67,7 +65,7 @@ for ax in axes:
     ax.set_aspect('equal')
 fig.suptitle(f'One particle, x0 = {X0_SINGLE}, Q = {Q}')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01a_single_particle.png', dpi=200)
+fig.savefig('01a_single_particle.png', dpi=200)
 plt.show()
 
 # %% Step 2: the full phase-space portrait (sextupole only here)
@@ -95,7 +93,7 @@ ax.set_aspect('equal')
 ax.set_xlim(-0.8, 0.8)
 ax.set_ylim(-0.8, 0.8)
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01a_phase_space_sextupole.png', dpi=200)
+fig.savefig('01a_phase_space_sextupole.png', dpi=200)
 plt.show()
 
 # %% Step 3: add the octupole
@@ -123,6 +121,6 @@ ax.set_aspect('equal')
 ax.set_xlim(-0.8, 0.8)
 ax.set_ylim(-0.8, 0.8)
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01a_phase_space_octupole.png', dpi=200)
+fig.savefig('01a_phase_space_octupole.png', dpi=200)
 plt.show()
 # %%

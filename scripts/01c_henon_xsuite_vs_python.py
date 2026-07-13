@@ -18,7 +18,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import xobjects as xo
 import xtrack as xt
-from pathlib import Path
 
 # %% PARAMETERS -- edit this cell and re-run everything below
 QX = 0.28
@@ -32,7 +31,6 @@ Y_RATIO = 0.5      # the "non-diagonal" family: y0 = Y_RATIO * x0
 GPU_DEVICE = None  # None -> CPU. On some machines you can set 0, 1, 2 or 3
                    # to track on one of the GPUs
 
-PLOT_DIR = Path('plots') if Path('plots').is_dir() else Path('../plots')
 
 # %% Initial conditions: a non-diagonal family (y0 = Y_RATIO*x0) and the
 # diagonal one (y0 = x0); all momenta zero.
@@ -111,7 +109,7 @@ for ax in axes.ravel():
     ax.set_ylim(-0.7, 0.7)
 fig.suptitle(f'Xsuite (black) vs Python (red), K2L = {K2L}, K3L = {K3L}')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01c_xsuite_vs_python.png', dpi=200)
+fig.savefig('01c_xsuite_vs_python.png', dpi=200)
 plt.show()
 
 # %%

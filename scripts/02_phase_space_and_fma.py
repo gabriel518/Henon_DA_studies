@@ -27,7 +27,6 @@ import matplotlib.pyplot as plt
 import xobjects as xo
 import xtrack as xt
 import nafflib
-from pathlib import Path
 
 # %% PARAMETERS -- edit this cell and re-run everything below
 QX = 0.28          # working point (compare with the resonance lines!)
@@ -41,7 +40,6 @@ R_LIM = 2.0        # aperture radius: particles beyond it are lost
 MAX_RES_ORDER = 5  # draw resonance lines m*Qx + n*Qy = p with |m|+|n| <= this
 GPU_DEVICE = None  # 0..3 on this machine; set to None to run on CPU
 
-PLOT_DIR = Path('plots') if Path('plots').is_dir() else Path('../plots')
 
 # %% Build the Hénon line and track the grid of initial amplitudes
 # The aperture element removes escaping particles (their loss turn goes to
@@ -151,7 +149,7 @@ ax.set_title(f'Tune footprint (resonances up to order {MAX_RES_ORDER})')
 ax.legend(loc='lower left')
 fig.colorbar(sc, ax=ax, label=r'initial amplitude $r_0=\sqrt{x_0^2+y_0^2}$  [map units]')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '02_tune_footprint.png', dpi=200)
+fig.savefig('02_tune_footprint.png', dpi=200)
 plt.show()
 
 # %% Plot 2: tune diffusion map in the initial-amplitude plane
@@ -165,7 +163,7 @@ ax.set_ylabel('$y_0$  [map units]')
 ax.set_title('Tune diffusion  $d=\\log_{10}|Q_{1st\\;half}-Q_{2nd\\;half}|$')
 fig.colorbar(sc, ax=ax, label='d  (blue = regular, red = chaotic, gray = lost)')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '02_tune_diffusion_map.png', dpi=200)
+fig.savefig('02_tune_diffusion_map.png', dpi=200)
 plt.show()
 
 # %% Plot 3: FMA in tune space, colored by tune diffusion, with resonance lines
@@ -215,7 +213,7 @@ fig.colorbar(sc, ax=ax,
              label=r'$d=\log_{10}|Q_{1st\;half}-Q_{2nd\;half}|$')
 
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '02_fma_on_resonance_web.png', dpi=200)
+fig.savefig('02_fma_on_resonance_web.png', dpi=200)
 plt.show()
 
 # %%

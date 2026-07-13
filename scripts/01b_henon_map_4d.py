@@ -20,7 +20,6 @@
 # %% Imports
 import numpy as np
 import matplotlib.pyplot as plt
-from pathlib import Path
 
 # %% PARAMETERS -- edit this cell and re-run everything below
 QX = 0.28          # horizontal tune
@@ -32,7 +31,6 @@ N_PART = 20        # initial conditions per family
 X_MAX = 0.55       # largest horizontal launch amplitude
 Y_RATIO_SMALL = 0.1    # step 2: y0 = Y_RATIO_SMALL * x0 (slightly off-plane)
 
-PLOT_DIR = Path('plots') if Path('plots').is_dir() else Path('../plots')
 
 # rotation coefficients, used in every cell below
 cx, sx = np.cos(2 * np.pi * QX), np.sin(2 * np.pi * QX)
@@ -67,7 +65,7 @@ for ax in axes:
     ax.set_ylim(-0.8, 0.8)
 fig.suptitle(f'Step 1: y0 = 0   (QX = {QX}, QY = {QY})')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01b_step1_inplane.png', dpi=200)
+fig.savefig('01b_step1_inplane.png', dpi=200)
 plt.show()
 
 # %% Step 2: a small vertical amplitude (y0 = 0.1 * x0)
@@ -99,7 +97,7 @@ for ax in axes:
     ax.set_ylim(-0.8, 0.8)
 fig.suptitle(f'Step 2: y0 = {Y_RATIO_SMALL} * x0')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01b_step2_small_y.png', dpi=200)
+fig.savefig('01b_step2_small_y.png', dpi=200)
 plt.show()
 
 # %% Step 3: the diagonal (y0 = x0), fully coupled motion
@@ -132,7 +130,7 @@ for ax in axes:
     ax.set_ylim(-0.8, 0.8)
 fig.suptitle('Step 3: diagonal launch y0 = x0')
 fig.tight_layout()
-fig.savefig(PLOT_DIR / '01b_step3_diagonal.png', dpi=200)
+fig.savefig('01b_step3_diagonal.png', dpi=200)
 plt.show()
 
 # %%
