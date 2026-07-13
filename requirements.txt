@@ -5,6 +5,7 @@ numba
 xtrack
 xpart
 nafflib
+ipykernel
 # optional, for GPU tracking (pick the build matching your CUDA version --
 # cupy-cuda11x works fine even with a newer driver, it bundles its own
 # CUDA runtime; see install_miniforge.sh):
